@@ -20,6 +20,11 @@ body {
     list-style: none;
 }
 
+/** Header сайта */
+
+.header{
+    background-color: var(--accent-white-color);
+}
 
 /** Лого сайта*/
 .logo {
@@ -169,6 +174,10 @@ color: var(--accent-color);
 
 /** Секция №4 "Наша команда"   */
 
+.team{
+    background-color: var(--secondary-btn-color);
+}
+
 .team-title {
     color: var(--title-text-color);
 
@@ -206,11 +215,13 @@ color: var(--accent-color);
 
 .footer-section {
     background-color: var(--secondary-bg-color);
+    
 }
 
 .footer-section .list-location{
     color: var(--accent-white-color);
 
+    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7;
@@ -221,6 +232,7 @@ color: var(--accent-color);
 .footer-section .list-contacts{
     color:rgb(255, 255, 255, 0.6);
 
+    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.7;
@@ -229,3 +241,12 @@ color: var(--accent-color);
     }
 
 
+.footer-section .list-location:hover,
+.footer-section .list-location:focus {
+    color: var(--accent-color);
+}
+
+.footer-section .list-contacts:hover,
+.footer-section .list-contacts:focus {
+    color: var(--accent-color);
+}
