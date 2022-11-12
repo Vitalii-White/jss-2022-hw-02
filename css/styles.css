@@ -10,6 +10,8 @@
 --secondary-btn-color: #F5F4FA;
 --border-color: #ECECEC;
 --icon-color: #AFB1B8;
+
+
 }
 
 *,
@@ -65,8 +67,16 @@ img{
 /** Header сайта */
 
 .header{
+   /*  position: fixed; */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    min-height: 80px;
+    width: 100%;
+
     background-color: var(--accent-white-color);
     border-bottom: 1px solid var(--border-color);
+
 }
 
 .top-menu{
@@ -127,16 +137,34 @@ color: var(--accent-color);
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    
 }
 
-.site-nav .link.current {             
+.site-nav .link.current {    
+    position: relative;         
     color: var(--accent-color);      
-}                                    
+}   
+
+.site-nav .link.current::after{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
 
 .site-nav .link:hover,
 .site-nav .link:focus
 {
-    color: var(--accent-color);
+    color: var(--accent-color);  
 }
 
 
@@ -163,6 +191,8 @@ color: var(--accent-color);
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts .link:hover,
@@ -248,19 +278,23 @@ padding-bottom: 94px;
     line-height: 1.9;
     text-align: center;
     letter-spacing: 0.06em;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .hero .button.primary{
     color: var(--accent-white-color);
     background-color: var(--accent-color);
     cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .hero .button.primary:hover,
 .hero .button.primary:focus {
-    color: var(--accent-white-color);
     background-color: var(--accent-btn-color);
-    cursor: pointer;
 }
 
 
@@ -326,13 +360,39 @@ background-color: var(--secondary-btn-color);
     padding-top: 0px;
 }
 
-.container-specialization{
+.specialization-list{
     display: flex;
 }
 
-.container-specialization .list:not(:last-child) {
+.specialization-list .list-item:not(:last-child) {
     margin-right: 30px;
 }
+
+.specialization-image {
+    position: relative;
+}
+
+.specialization-image .overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.specialization-image .overlay > p {
+    margin-top: 27px;
+
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
 
 .specialization-title {
     color: var(--title-text-color);
@@ -421,9 +481,13 @@ background-color: var(--secondary-btn-color);
     height: 44px;
     width: 44px;
     color: var(--icon-color);
+    background-color: var(--accent-white-color);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-list .background-icon:not(:last-child) {
@@ -456,7 +520,7 @@ background-color: var(--secondary-btn-color);
     letter-spacing: 0.03em;
     }
 
-   /** Иконки секции Постійні кліенти" */
+   /** Иконки секции "Постійні кліенти" */
 
    .clients {
        display: flex;
@@ -479,11 +543,13 @@ background-color: var(--secondary-btn-color);
     border: 1px solid var(--icon-color);
     align-items: center;
     justify-content: center;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients .list-icon{
     fill: currentColor;
-    
 }
 
 
@@ -525,6 +591,8 @@ background-color: var(--secondary-btn-color);
 .nav-list .button.secondary {
     color: var(--title-text-color);
     background-color: var(--secondary-btn-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-list .button.secondary:hover,
@@ -543,18 +611,78 @@ background-color: var(--secondary-btn-color);
     margin-top: 50px;
 }
 
-.project-list .link{
-    text-decoration: none;
-}
-
 .project-list .item{
     width: calc((100% - 60px)/3);
     margin-right: 30px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-list .list:hover,
-.project-list .list:focus {
+.project-list .card-link {
+    text-decoration: none;
+}
+
+/** Анимация на карточках  */
+
+.project-list .card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/** Как делать оверлей попсевдоклассу before */
+
+/* .project-list .image::before {
+    display: inline-block;
+    position: absolute;
+    top:0;
+    left:0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    opacity: 1;
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+/* .project-list .image:hover::before {
+    opacity: 1;
+} */
+
+.project-list .card-image .overlay {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.project-list .card-image .overlay>p {
+    padding: 63px 24px;
+
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+}
+
+.project-list .card-link:hover .card-image .overlay,
+.project-list .card-link:focus .card-image .overlay {
+    transform: translateY(0);
+}
+
+.project-list .item:hover,
+.project-list .item:focus  {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -568,6 +696,9 @@ background-color: var(--secondary-btn-color);
 
 
 /** Нижняя часть карточек*/
+
+
+
 .project-list .item .card-bottom{
     padding: 20px 24px;
     border: 1px solid var(--border-color);
@@ -612,9 +743,6 @@ display: flex;
 
 }
 
-
-
-
 .footer-section .logo {
     display: inline-block;
     margin-bottom: 20px;
@@ -635,6 +763,8 @@ display: flex;
     line-height: 1.7;
     letter-spacing: 0.03em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);      
 }
 
 .footer-section .list-contacts{
@@ -648,6 +778,8 @@ display: flex;
     line-height: 1.7;
     letter-spacing: 0.03em;
     text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);      
     }
 
 
@@ -710,11 +842,59 @@ display: inline-block;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
   .social-links .link-item:hover,
   .social-links .link-item:focus {
+    background-color: var(--accent-color);
+  }
 
-      background-color: var(--accent-color);
-      color: var(--accent-white-color);
+
+
+  /**  Модальное окно      */
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;   /**  Позволяет нажимать на кнопки под бэкдропом(оверлеем)    */
+  }
+
+   .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+   }
+
+
+  .modal {
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    width: 528px;
+    height: 581px;
+    background-color: #FFFFFF;
+
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .button-close {
+    display: inline-block;
+    margin-left: 485px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: var(--accent-white-color);
+    border-radius: 50%;
+    border: 1px solid lightgray;
   }

@@ -62,7 +62,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Ефективні рішення для <br> вашого бізнесу</h1>
-                <button type="button" class="button primary">Замовити послугу</button>
+                <button type="button" data-modal-open class="button primary">Замовити послугу</button>
             </div>
         </section>
 
@@ -118,19 +118,36 @@
         <section class="section specialization">
             <div class="container">
                 <h2 class="specialization-title">Чим ми займаємося</h2>
-                <ul class="container-specialization">
-                    <li class="list">
-                        <img src="./images/box_one.jpg" alt="Лидина набирає компьютерний код програми" width="370"
-                            height="294" />
+                <ul class="list specialization-list">
+                    <li class="list-item">
+                        <div class="specialization-image">
+                            <img src="./images/box_one.jpg" alt="Лидина набирає компьютерний код програми" width="370"
+                                height="294" />
+                            <div class="overlay">
+                                <p>десктопні додатки</p>
+                            </div>
+
+                        </div>
                     </li>
-                    <li class="list">
-                        <img src="./images/box_two.jpg"
-                            alt="Лидина демонструє макети модальних вікон мобільного додатку" width="370"
-                            height="294" />
+                    <li class="list-item">
+                        <div class="specialization-image">
+                            <img src="./images/box_two.jpg"
+                                alt="Лидина демонструє макети модальних вікон мобільного додатку" width="370"
+                                height="294" />
+                            <div class="overlay">
+                                <P>мобільні додатки</P>
+                            </div>
+
+                        </div>
                     </li>
-                    <li class="list">
-                        <img src="./images/box_three.jpg" alt="Лидина демонструє на планшеті гаму кольорів" width="370"
-                            height="294" />
+                    <li class="list-item">
+                        <div class="specialization-image">
+                            <img src="./images/box_three.jpg" alt="Лидина демонструє на планшеті гаму кольорів"
+                                width="370" height="294" />
+                            <div class="overlay">
+                                <P>дизайнерські рішення</P>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -403,7 +420,13 @@
             </ul>
         </div>
     </footer>
-    <script src="/index.js"></script>
+    <div data-modal class="backdrop is-hidden">
+        <div class="modal">
+            <button data-modal-close class="button-close">&#10006</button>
+        </div>
+
+    </div>
+    <script src="./modal.js"></script>
 </body>
 
 </html>
