@@ -1,0 +1,51 @@
+
+/** Utils  */
+
+@import './utils/variables';
+@import './utils/placeholder';
+@import './utils/hidden' ;
+
+/** Common-settings  */
+
+@import './common/common-settings';
+@import './common/social-links';
+@import './common/logo';
+@import './common/backdrop';
+@import './common/modal';
+@import './common/form-base';
+
+/** Header-page  */
+
+@import './components/header/page-header';
+@import './components/header/site-nav';
+@import './components/header/contacts';
+
+
+/** Studio-page  */
+
+@import './components/studio-page.scss/hero-section';
+@import './components/studio-page.scss/advantage-section';
+@import './components/studio-page.scss/specialization-section';
+@import './components/studio-page.scss/team-section';
+@import './components/studio-page.scss/clients-section';
+
+
+/** Portfolio-page  */
+
+@import './components/portfolio-page.scss/portfolio-nav';
+@import './components/portfolio-page.scss/project';
+
+
+/** Footer-page  */
+
+@import './components/footer/page-footer';
+@import './components/footer/mailing';
+
+
+
+
+
+
+
+
+

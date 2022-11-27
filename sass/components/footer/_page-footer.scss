@@ -1,0 +1,61 @@
+.page-footer {
+    background-color: $secondary-bg-color;
+}
+
+.page-footer__footer-menu {
+    display: flex;
+
+}
+
+.page-footer__group {
+    margin-top: 78px;
+    margin-bottom: 42px;
+    margin-right: 70px;
+}
+
+.info-list__item.list:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.info-list__link {
+    color: rgb(255, 255, 255, 0.6);
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+            color: $accent-color;
+        }
+
+    &--white-text {
+            color: $accent-white-color;
+        }
+}
+
+/** Соц сети в футере */
+
+
+.social-links-group {
+    display: inline-block;
+    margin-top: 90px;
+    margin-bottom: 82px;
+    margin-right: 93px;
+}
+
+.social-links-group__title {
+    margin-bottom: 20px;
+
+    color: $accent-white-color;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
