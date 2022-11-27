@@ -178,6 +178,7 @@
 
 /**  Кнопка формы    */
 .form-base__button {
+    @extend %button--accent;
     padding: 10px 52px;
     min-width: 200px;
     height: 50px;

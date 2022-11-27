@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /** Utils  */ /** Сброс стилей списков  */
 /** Общие характеристики кнопки  */
-.portfolio-nav__button, .mailing__button, .portfolio-nav__button--curent, .hero__button {
+.portfolio-nav__button, .mailing__button, .portfolio-nav__button--curent, .hero__button, .form-base__button {
   display: inline-flex;
   justify-content: center;
   text-align: center;
@@ -19,16 +19,16 @@
   cursor: pointer;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-nav__button:hover, .mailing__button:hover, .portfolio-nav__button--curent:hover, .hero__button:hover, .portfolio-nav__button:focus, .mailing__button:focus, .portfolio-nav__button--curent:focus, .hero__button:focus {
+.portfolio-nav__button:hover, .mailing__button:hover, .portfolio-nav__button--curent:hover, .hero__button:hover, .form-base__button:hover, .portfolio-nav__button:focus, .mailing__button:focus, .portfolio-nav__button--curent:focus, .hero__button:focus, .form-base__button:focus {
   color: #FFFFFF;
   background-color: #2196F3;
 }
 
-.mailing__button, .portfolio-nav__button--curent, .hero__button {
+.mailing__button, .portfolio-nav__button--curent, .hero__button, .form-base__button {
   color: #FFFFFF;
   background-color: #2196F3;
 }
-.mailing__button:hover, .portfolio-nav__button--curent:hover, .hero__button:hover, .mailing__button:focus, .portfolio-nav__button--curent:focus, .hero__button:focus {
+.mailing__button:hover, .portfolio-nav__button--curent:hover, .hero__button:hover, .form-base__button:hover, .mailing__button:focus, .portfolio-nav__button--curent:focus, .hero__button:focus, .form-base__button:focus {
   background-color: #188CE8;
 }
 
