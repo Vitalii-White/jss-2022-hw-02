@@ -1,20 +1,23 @@
 .advantage__background-icon {
-    width: 270px;
-    height: 120px;
     display: inline-block;
     margin-bottom: 30px;
-    padding: 25px;
+    padding: 25px; 
     text-align: center;
+    width: 100%;
 
     background-color: $secondary-btn-color;
+
+    @media screen and (min-width: 1170px) {
+            width: 270px;
+        }
 }
 
 .advantage__title {
     color: $title-text-color;
 
     margin-bottom: 10px;
+    text-align: center;
 
-    font-style: 400;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;

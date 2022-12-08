@@ -1,0 +1,85 @@
+.menu-container {
+    background-color: $accent-white-color;
+    z-index: 2;
+
+    &.is-open {
+        display: block;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        padding: 48px 40px;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+}
+
+
+.burger-social-links {
+    display: flex;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.burger-social-links__item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.burger-social-links__link {
+    color: $accent-color;
+}
+
+.burger-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    z-index: 3;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: $accent-white-color;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+
+.burger-button.is-open .burger-button__icon--open {
+    display: none;
+}
+
+.burger-button.is-open .burger-button__icon--close {
+    display: block;
+
+    &:hover,
+    &:focus {
+
+        fill: $accent-color;
+    }
+}
+
+.burger-button.is-open .burger-button--close {
+    display: block;
+}
+
+.burger-button__icon--close {
+    display: none;
+}

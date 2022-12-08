@@ -19,41 +19,65 @@
 <body>
     <header class="page-header">
         <div class="page-header__top-menu container">
-
-            <nav class="site-nav">
-                <a href="./index.html" lang="en" class="logo page-header__logo">
-                    <span class="logo__accent">Web</span>Studio
-                </a>
-
-                <ul class="site-nav__list list-style">
-                    <li class="site-nav__item">
-                        <a href="./index.html" class="site-nav__link">Студія</a>
+    
+            <a href="./index.html" lang="en" class="logo page-header__logo">
+                <span class="logo__accent">Web</span>Studio
+            </a>
+    
+            <button type="button" class="burger-button" data-menu-button aria-expanded="false"
+                aria-controls="menu-contaier">
+                <svg class="burger-button__icon" width="40px" height="40px" aria-label="Переключатель мобильного меню">
+                    <use href="./images/sprite.svg#icon-menu" class="burger-button__icon--open"></use>
+                    <use href="./images/sprite.svg#burger-close" class="burger-button__icon--close"></use>
+                </svg>
+            </button>
+    
+            <div class="menu-container" data-menu>
+                <nav class="site-nav">
+                    <ul class="site-nav__list list-style">
+                        <li class="site-nav__item">
+                            <a href="./index.html" class="site-nav__link">Студія</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a href="./portfolio.html" class="site-nav__link site-nav__link--current">Партфоліо</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a href="#" class="site-nav__link">Контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+    
+                <ul class="contacts list-style">
+                    <li class="contacts__item">
+                        <a href="mailto:info@devstudio.com" lang="en" class="contacts__link ">
+                            <svg class="contacts__icon-envelope">
+                                <use href="./images/sprite.svg#icon-envelope"></use>
+                            </svg>
+                            info@devstudio.com</a>
                     </li>
-                    <li class="site-nav__item">
-                        <a href="./portfolio.html" class="site-nav__link site-nav__link--current">Партфоліо</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="#" class="site-nav__link">Контакти</a>
+                    <li class="contacts__item">
+                        <a href="tel:+380961111111" class="contacts__link contacts__link--accent">
+                            <svg class="contacts__icon-smartphone">
+                                <use href="./images/sprite.svg#icon-smartphone"></use>
+                            </svg>
+                            +38 096 111 11 11</a>
                     </li>
                 </ul>
-            </nav>
-
-            <ul class="contacts list-style">
-                <li class="contacts__item">
-                    <a href="mailto:info@devstudio.com" lang="en" class="contacts__link">
-                        <svg class="contacts__icon" width="16px" height="12px">
-                            <use href="./images/sprite.svg#icon-envelope"></use>
-                        </svg>
-                        info@devstudio.com</a>
-                </li>
-                <li class="contacts__item">
-                    <a href="tel:+380961111111" class="contacts__link">
-                        <svg class="contacts__icon" width="10px" height="16px">
-                            <use href="./images/sprite.svg#icon-smartphone"></use>
-                        </svg>
-                        +38 096 111 11 11</a>
-                </li>
-            </ul>
+                <ul class="burger-social-links list-style">
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">Instagram</a>
+                    </li>
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">Twitter</a>
+                    </li>
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">Facebook</a>
+                    </li>
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -78,14 +102,28 @@
                 </li>
             </ul>
 
-            <ul class="list-set list-set--card list-style">
+            <ul class="list-set list-style">
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/technoquack.jpg" alt="Зображення монітору з відкритим веб-сайтом"
-                                    width="370" height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/technoquack-370.webp 370w,
+                                ./images/technoquack-740.webp 740w,
+                                ./images/technoquack-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/technoquack-370.jpg 370w,
+                                ./images/technoquack-740.jpg 740w,
+                                ./images/technoquack-1110.jpg 1110w" src="./images/technoquack-370.jpg"
+                                    alt="Зображення монітору з відкритим веб-сайтом"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів. Все це
@@ -101,12 +139,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/basketball-players.jpg"
-                                    alt="Зображення баскетболістів з м'ячем у стрибку" width="370" height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/basketball-players-370.webp 370w,
+                                ./images/basketball-players-740.webp 740w,
+                                ./images/basketball-players-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/basketball-players-370.jpg 370w,
+                                ./images/basketball-players-740.jpg 740w,
+                                ./images/basketball-players-1110.jpg 1110w" src="./images/basketball-players-370.jpg"
+                                    alt="Зображення баскетболістів з м'ячем у стрибку"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -123,13 +175,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/seafood.jpg"
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/seafood-370.webp 370w,
+                                ./images/seafood-740.webp 740w,
+                                ./images/seafood-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/seafood-370.jpg 370w,
+                                ./images/seafood-740.jpg 740w,
+                                ./images/seafood-1110.jpg 1110w" src="./images/seafood-370.jpg"
                                     alt="Зображення акули зверху якої надпис морська їжа на англійській мові"
-                                    width="370" height="294">
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -146,11 +211,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/prime.jpg" alt="Зображення навушників" width="370" height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/prime-370.webp 370w,
+                                ./images/prime-740.webp 740w,
+                                ./images/prime-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/prime-370.jpg 370w,
+                                ./images/prime-740.jpg 740w,
+                                ./images/prime-1110.jpg 1110w" src="./images/prime-370.jpg"
+                                    alt="Зображення навушників"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -167,11 +247,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/boxes.jpg" alt="Зображення двух коробок" width="370" height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/boxes-370.webp 370w,
+                                ./images/boxes-740.webp 740w,
+                                ./images/boxes-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/boxes-370.jpg 370w,
+                                ./images/boxes-740.jpg 740w,
+                                ./images/boxes-1110.jpg 1110w" src="./images/boxes-370.jpg"
+                                    alt="Зображення двух коробок"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -188,12 +283,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/inspiration.jpg" alt="Зображення монітору з відкритим веб-сайтом"
-                                    width="370" height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/inspiration-370.webp 370w,
+                                ./images/inspiration-740.webp 740w,
+                                ./images/inspiration-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/inspiration-370.jpg 370w,
+                                ./images/inspiration-740.jpg 740w,
+                                ./images/inspiration-1110.jpg 1110w" src="./images/inspiration-370.jpg"
+                                    alt="Зображення монітору з відкритим веб-сайтом"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -210,12 +319,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/edition.jpg" alt="Зображення відкритої книжки" width="370"
-                                    height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/limited-edition-370.webp 370w,
+                                ./images/limited-edition-740.webp 740w,
+                                ./images/limited-edition-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/limited-edition-370.jpg 370w,
+                                ./images/limited-edition-740.jpg 740w,
+                                ./images/limited-edition-1110.jpg 1110w" src="./images/limited-edition-370.jpg"
+                                    alt="Зображення відкритої книжки"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -232,12 +355,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/lab.jpg" alt="Зображення бірки з наисом на англійській мові"
-                                    width="370" height="294">
+                            <div class="project__image-container">
+
+                            <picture>
+                                <source srcset="
+                                ./images/lab-370.webp 370w,
+                                ./images/lab-740.webp 740w,
+                                ./images/lab-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/lab-370.jpg 370w,
+                                ./images/lab-740.jpg 740w,
+                                ./images/lab-1110.jpg 1110w" src="./images/lab-370.jpg"
+                                    alt="Зображення бірки з наисом на англійській мові"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -254,12 +391,26 @@
                     </article>
                 </li>
 
-                <li class="list-set__item list-set__item--card">
+                <li class="list-set__item list-set__item--three-column">
                     <article class="project">
                         <a href="#" class="project__link">
-                            <div class="project__image">
-                                <img src="./images/business.jpg"
-                                    alt="Зображення рук людини які напирають щось на ноутбуці" width="370" height="294">
+                            <div class="project__image-container">
+
+                                <picture>
+                                <source srcset="
+                                ./images/growing-business-370.webp 370w,
+                                ./images/growing-business-740.webp 740w,
+                                ./images/growing-business-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/growing-business-370.jpg 370w,
+                                ./images/growing-business-740.jpg 740w,
+                                ./images/growing-business-1110.jpg 1110w" src="./images/growing-business-370.jpg"
+                                    alt="Зображення рук людини які напирають щось на ноутбуці"
+                                    sizes="(min-width: 1170px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    class="project__image" />
+                            </picture>
+
                                 <div class="project__overlay">
                                     <P class="project__text">Ресурс пропонує комплексні пропозиції з різним рівнем
                                         функціоналу та сервісів.
@@ -279,9 +430,10 @@
         </div>
     </section>
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="page-footer__footer-menu">
+<footer class="page-footer">
+    <div class="container">
+        <div class="page-footer__footer-menu">
+            <div class="page-footer__wrapper">
                 <div class="page-footer__group">
                     <a href="./index.html" lang="en" class="logo page-footer__logo"> <span
                             class="logo__accent">Web</span>Studio</a>
@@ -337,17 +489,22 @@
                         </li>
                     </ul>
                 </div>
+            </div>
 
-                <form class="mailing">
+            <form class="mailing">
+                <div class="mailing-group">
                     <label class="mailing__label">
                         <h2 class=" mailing__title">Підпишіться на розсилку</h2>
                         <input type=" email" class="mailing__input" name="email" placeholder="E-mail">
                     </label>
                     <button type="submit" class="button button--accent mailing__button">Підписатися</button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-    </footer>
+    </div>
+</footer>
+
+    <script src="./burger.js"></script>
     <script src="./modal.js"></script>
 </body>
 

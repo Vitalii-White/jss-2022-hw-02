@@ -20,40 +20,64 @@
     <header class="page-header">
         <div class="page-header__top-menu container">
 
-            <nav class="site-nav">
-                <a href="./index.html" lang="en" class="logo page-header__logo">
-                    <span class="logo__accent">Web</span>Studio
-                </a>
+            <a href="./index.html" lang="en" class="logo page-header__logo">
+                <span class="logo__accent">Web</span>Studio
+            </a>
 
-                <ul class="site-nav__list list-style">
-                    <li class="site-nav__item">
-                        <a href="./index.html" class="site-nav__link site-nav__link--current">Студія</a>
+            <button type="button" class="burger-button" data-menu-button aria-expanded="false"
+                aria-controls="menu-contaier">
+                <svg class="burger-button__icon" width="40px" height="40px" aria-label="Переключатель мобильного меню">
+                    <use href="./images/sprite.svg#icon-menu" class="burger-button__icon--open"></use>
+                    <use href="./images/sprite.svg#burger-close" class="burger-button__icon--close"></use>
+                </svg>
+            </button>
+
+            <div class="menu-container" data-menu>
+                <nav class="site-nav">
+                    <ul class="site-nav__list list-style">
+                        <li class="site-nav__item">
+                            <a href="./index.html" class="site-nav__link site-nav__link--current">Студія</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a href="./portfolio.html" class="site-nav__link">Партфоліо</a>
+                        </li>
+                        <li class="site-nav__item">
+                            <a href="#" class="site-nav__link">Контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <ul class="contacts list-style">
+                    <li class="contacts__item">
+                        <a href="mailto:info@devstudio.com" lang="en" class="contacts__link ">
+                            <svg class="contacts__icon-envelope">
+                                <use href="./images/sprite.svg#icon-envelope"></use>
+                            </svg>
+                            info@devstudio.com</a>
                     </li>
-                    <li class="site-nav__item">
-                        <a href="./portfolio.html" class="site-nav__link">Партфоліо</a>
-                    </li>
-                    <li class="site-nav__item">
-                        <a href="#" class="site-nav__link">Контакти</a>
+                    <li class="contacts__item">
+                        <a href="tel:+380961111111" class="contacts__link contacts__link--accent">
+                            <svg class="contacts__icon-smartphone">
+                                <use href="./images/sprite.svg#icon-smartphone"></use>
+                            </svg>
+                            +38 096 111 11 11</a>
                     </li>
                 </ul>
-            </nav>
-
-            <ul class="contacts list-style">
-                <li class="contacts__item">
-                    <a href="mailto:info@devstudio.com" lang="en" class="contacts__link">
-                        <svg class="contacts__icon" width="16px" height="12px">
-                            <use href="./images/sprite.svg#icon-envelope"></use>
-                        </svg>
-                        info@devstudio.com</a>
-                </li>
-                <li class="contacts__item">
-                    <a href="tel:+380961111111" class="contacts__link">
-                        <svg class="contacts__icon" width="10px" height="16px">
-                            <use href="./images/sprite.svg#icon-smartphone"></use>
-                        </svg>
-                        +38 096 111 11 11</a>
-                </li>
-            </ul>
+                <ul class="burger-social-links list-style">
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">Instagram</a>
+                    </li>
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">Twitter</a>
+                    </li>
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">Facebook</a>
+                    </li>
+                    <li class="burger-social-links__item">
+                        <a href="#" class="burger-social-links__link">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -128,31 +152,72 @@
             <div class="container">
                 <h2 class="specialization__title">Чим ми займаємося</h2>
                 <ul class="list-set list-style">
-                    <li class="list-set__item">
+                    <li class="list-set__item list-set__item--three-column">
                         <div class="specialization__content">
-                            <img src="./images/box_one.jpg" alt="Лидина набирає компьютерний код програми" width="370"
-                                height="294" class="specialization__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/box_one-370.webp 370w,
+                                ./images/box_one-740.webp 740w,
+                                ./images/box_one-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/box_one-370.jpg 370w,
+                                ./images/box_one-740.jpg 740w,
+                                ./images/box_one-1110.jpg 1110w" src="./images/box_one-370.jpg"
+                                    alt="Лидина набирає компьютерний код програми"
+                                    sizes="100vw"
+                                    class="specialization__image" />
+                            </picture>
+
                             <div class="specialization__overlay">
                                 <p class="specialization__description">десктопні додатки</p>
                             </div>
 
                         </div>
                     </li>
-                    <li class="list-set__item">
+                    <li class="llist-set__item list-set__item--three-column">
                         <div class="specialization__content">
-                            <img src="./images/box_two.jpg"
-                                alt="Лидина демонструє макети модальних вікон мобільного додатку" width="370"
-                                height="294" class="specialization__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/box_two-370.webp 370w,
+                                ./images/box_two-740.webp 740w,
+                                ./images/box_two-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/box_two-370.jpg 370w,
+                                ./images/box_two-740.jpg 740w,
+                                ./images/box_two-1110.jpg 1110w" src="./images/box_one-370.jpg"
+                                    alt="Лидина демонструє макети модальних вікон мобільного додатку"
+                                    sizes="100vw"
+                                    class="specialization__image" />
+                            </picture>
+
                             <div class="specialization__overlay">
                                 <P class="specialization__description">мобільні додатки</P>
                             </div>
 
                         </div>
                     </li>
-                    <li class="list-set__item">
+                    <li class="list-set__item list-set__item--three-column">
                         <div class="specialization__content">
-                            <img src="./images/box_three.jpg" alt="Лидина демонструє на планшеті гаму кольорів"
-                                width="370" height="294" class="specialization__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/box_three-370.webp 370w,
+                                ./images/box_three-740.webp 740w,
+                                ./images/box_three-1110.webp 1110w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/box_three-370.jpg 370w,
+                                ./images/box_three-740.jpg 740w,
+                                ./images/box_three-1110.jpg 1110w" src="./images/box_three-370.jpg"
+                                    alt="Лидина демонструє на планшеті гаму кольорів"
+                                    sizes="100vw"
+                                    class="specialization__image" />
+                            </picture>
+
                             <div class="specialization__overlay">
                                 <P class="specialization__description">дизайнерські рішення</P>
                             </div>
@@ -169,13 +234,27 @@
 
                     <li class="list-set__item">
                         <article class="team-card">
-                            <img src="./images/igor.jpg" alt="Зображення чоловіка з посмішкою" width="270" height="260"
-                                class="team-card__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/igor-270.webp 270w,
+                                ./images/igor-540.webp 540w,
+                                ./images/igor-810.webp 810w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/igor-270.jpg 270w,
+                                ./images/igor-540.jpg 540w,
+                                ./images/igor-810.jpg 810w" src="./images/igor-270.jpg"
+                                    alt="Зображення чоловіка з посмішкою"
+                                    sizes="(min-width: 1170px) 25vw, (min-width: 768px) 50vw, 100vw"
+                                    class="team-card__image" />
+                            </picture>
+
                             <div class="team-card__bottom">
                                 <h3 class="team-card__title">Ігор Дем'яненко</h3>
                                 <p lang="en" class="team-card__description">Product Designer</p>
-                                <ul class="social-links list-style">
 
+                                <ul class="social-links list-style">
                                     <li class="social-links__item">
                                         <a href="#" class="social-links__link">
                                             <svg class="social-links__icon" width="20px" height="20px">
@@ -214,8 +293,22 @@
 
                     <li class="list-set__item">
                         <article class="team-card">
-                            <img src="./images/olga.jpg" alt="Зображення жінки з посмішкою" width="270" height="260"
-                                class="team-card__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/olga-270.webp 270w,
+                                ./images/olga-540.webp 540w,
+                                ./images/olga-810.webp 810w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/olga-270.jpg 270w,
+                                ./images/olga-540.jpg 540w,
+                                ./images/olga-810.jpg 810w" src="./images/olga-270.jpg"
+                                    alt="Зображення жінки з посмішкою"
+                                    sizes="(min-width: 1170px) 25vw, (min-width: 768px) 50vw, 100vw"
+                                    class="team-card__image" />
+                            </picture>
+
                             <div class="team-card__bottom">
                                 <h3 class="team-card__title">Ольга Рєпіна</h3>
                                 <p lang="en" class="team-card__description">Frontend Developer</p>
@@ -258,8 +351,22 @@
 
                     <li class="list-set__item">
                         <article class="team-card">
-                            <img src="./images/micola.jpg" alt="Зображення чоловіка з посмішкою" width="270"
-                                height="260" class="team-card__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/micola-270.webp 270w,
+                                ./images/micola-540.webp 540w,
+                                ./images/micola-810.webp 810w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/micola-270.jpg 270w,
+                                ./images/micola-540.jpg 540w,
+                                ./images/micola-810.jpg 810w" src="./images/micola-270.jpg"
+                                    alt="Зображення чоловіка з посмішкою""
+                                    sizes="(min-width: 1170px) 25vw, (min-width: 768px) 50vw, 100vw"
+                                    class="team-card__image" />
+                            </picture>
+
                             <div class="team-card__bottom">
                                 <h3 class="team-card__title">Микола Тарасов</h3>
                                 <p lang="en" class="team-card__description">Marketing</p>
@@ -302,8 +409,22 @@
 
                     <li class="list-set__item">
                         <article class="team-card">
-                            <img src="./images/mihaylo.jpg" alt="Зображення чоловіка з посмішкою" width="270"
-                                class="team-card__image" />
+
+                            <picture>
+                                <source srcset="
+                                ./images/mykhailo-270.webp 270w,
+                                ./images/mykhailo-540.webp 540w,
+                                ./images/mykhailo-810.webp 810w" type="image/webp" />
+
+                                <img srcset="
+                                ./images/mykhailo-270.jpg 270w,
+                                ./images/mykhailo-540.jpg 540w,
+                                ./images/mykhailo-810.jpg 810w" src="./images/mykhailo-270.jpg"
+                                    alt="Зображення чоловіка з посмішкою""
+                                    sizes="(min-width: 1170px) 25vw, (min-width: 768px) 50vw, 100vw"
+                                    class="team-card__image" />
+                            </picture>
+
                             <div class="team-card__bottom">
                                 <h3 class="team-card__title">Михайло Єрмаков</h3>
                                 <p lang="en" class="team-card__description">UI Designer</p>
@@ -350,8 +471,8 @@
         <section class="section clients">
             <div class="container">
                 <h2 class="clients__title">Постійні клієнти</h2>
-                <ul class="list-set list-style">
-                    <li class="list-set__item">
+                <ul class="clients-list list-style">
+                    <li class="clients-item">
                         <a href="#" class="clients__link">
                             <svg class="clients__icon" width="106px" height="60px">
                                 <use href="./images/sprite.svg#client1"></use>
@@ -359,7 +480,7 @@
                         </a>
                     </li>
 
-                    <li class="list-set__item">
+                    <li class="clients-item">
                         <a href="#" class="clients__link">
                             <svg class="clients__icon" width="106px" height="60px">
                                 <use href="./images/sprite.svg#client2"></use>
@@ -367,7 +488,7 @@
                         </a>
                     </li>
 
-                    <li class="list-set__item">
+                    <li class="clients-item">
                         <a href="#" class="clients__link">
                             <svg class="clients__icon" width="106px" height="60px">
                                 <use href="./images/sprite.svg#client3"></use>
@@ -375,7 +496,7 @@
                         </a>
                     </li>
 
-                    <li class="list-set__item">
+                    <li class="clients-item">
                         <a href="#" class="clients__link">
                             <svg class="clients__icon" width="106px" height="60px">
                                 <use href="./images/sprite.svg#client4"></use>
@@ -383,7 +504,7 @@
                         </a>
                     </li>
 
-                    <li class="list-set__item">
+                    <li class="clients-item">
                         <a href="#" class="clients__link">
                             <svg class="clients__icon" width="106px" height="60px">
                                 <use href="./images/sprite.svg#client5"></use>
@@ -391,7 +512,7 @@
                         </a>
                     </li>
 
-                    <li class="list-set__item">
+                    <li class="clients-item">
                         <a href="#" class="clients__link">
                             <svg class="clients__icon" width="106px" height="60px">
                                 <use href="./images/sprite.svg#icon-client6"></use>
@@ -407,75 +528,79 @@
     <footer class="page-footer">
         <div class="container">
             <div class="page-footer__footer-menu">
-                <div class="page-footer__group">
-                    <a href="./index.html" lang="en" class="logo page-footer__logo"> <span
-                            class="logo__accent">Web</span>Studio</a>
-                    <address>
-                        <ul class="info-list list-style">
-                            <li class="info-list__item">
-                                <a href="https://goo.gl/maps/CPtrU1FHBa2aNyZL9" target="_blank"
-                                    rel="noopener noreferrer nofollow"
-                                    class="info-list__link info-list__link--white-text">м. Київ, пр-т Лесі
-                                    Украінки, 26</a>
+                <div class="page-footer__wrapper">
+                    <div class="page-footer__group">
+                        <a href="./index.html" lang="en" class="logo page-footer__logo"> <span
+                                class="logo__accent">Web</span>Studio</a>
+                        <address>
+                            <ul class="info-list list-style">
+                                <li class="info-list__item">
+                                    <a href="https://goo.gl/maps/CPtrU1FHBa2aNyZL9" target="_blank"
+                                        rel="noopener noreferrer nofollow"
+                                        class="info-list__link info-list__link--white-text">м. Київ, пр-т Лесі
+                                        Украінки, 26</a>
+                                </li>
+                                <li class="info-list__item">
+                                    <a href="mailto:info@devstudio.com" lang="en"
+                                        class="info-list__link">info@devstudio.com</a>
+                                </li>
+                                <li class="info-list__item">
+                                    <a href="tel:+380961111111" class="info-list__link">+38 096 111 11 11</a>
+                                </li>
+                            </ul>
+                        </address>
+                    </div>
+
+                    <div class="social-links-group">
+                        <h2 class="social-links-group__title">приєднуйтесь</h2>
+                        <ul class="social-links list-style">
+                            <li class="social-links__item">
+                                <a href="#" class="social-links__link social-links__link--footer">
+                                    <svg class="social-links__icon" width="20px" height="20px">
+                                        <use href="./images/sprite.svg#icon-instagram-1"></use>
+                                    </svg>
+                                </a>
                             </li>
-                            <li class="info-list__item">
-                                <a href="mailto:info@devstudio.com" lang="en"
-                                    class="info-list__link">info@devstudio.com</a>
+                            <li class="social-links__item">
+                                <a href="#" class="social-links__link social-links__link--footer">
+                                    <svg class="social-links__icon" width="20px" height="20px">
+                                        <use href="./images/sprite.svg#icon-twitter"></use>
+                                    </svg>
+                                </a>
                             </li>
-                            <li class="info-list__item">
-                                <a href="tel:+380961111111" class="info-list__link">+38 096 111 11 11</a>
+                            <li class="social-links__item">
+                                <a href="#" class="social-links__link social-links__link--footer">
+                                    <svg class="social-links__icon" width="20px" height="20px">
+                                        <use href="./images/sprite.svg#icon-facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-links__item">
+                                <a href="#" class="social-links__link social-links__link--footer">
+                                    <svg class="social-links__icon" width="20px" height="20px">
+                                        <use href="./images/sprite.svg#icon-linkedin-1"></use>
+                                    </svg>
+                                </a>
                             </li>
                         </ul>
-                    </address>
-                </div>
-
-                <div class="social-links-group">
-                    <h2 class="social-links-group__title">приєднуйтесь</h2>
-                    <ul class="social-links list-style">
-                        <li class="social-links__item">
-                            <a href="#" class="social-links__link social-links__link--footer">
-                                <svg class="social-links__icon" width="20px" height="20px">
-                                    <use href="./images/sprite.svg#icon-instagram-1"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="#" class="social-links__link social-links__link--footer">
-                                <svg class="social-links__icon" width="20px" height="20px">
-                                    <use href="./images/sprite.svg#icon-twitter"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="#" class="social-links__link social-links__link--footer">
-                                <svg class="social-links__icon" width="20px" height="20px">
-                                    <use href="./images/sprite.svg#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="social-links__item">
-                            <a href="#" class="social-links__link social-links__link--footer">
-                                <svg class="social-links__icon" width="20px" height="20px">
-                                    <use href="./images/sprite.svg#icon-linkedin-1"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
 
                 <form class="mailing">
-                    <label class="mailing__label">
-                        <h2 class=" mailing__title">Підпишіться на розсилку</h2>
-                        <input type=" email" class="mailing__input" name="email" placeholder="E-mail">
-                    </label>
-                    <button type="submit" class="button button--accent mailing__button">Підписатися</button>
+                    <div class="mailing-group">
+                        <label class="mailing__label">
+                            <h2 class=" mailing__title">Підпишіться на розсилку</h2>
+                            <input type=" email" class="mailing__input" name="email" placeholder="E-mail">
+                        </label>
+                        <button type="submit" class="button button--accent mailing__button">Підписатися</button>
+                    </div>
                 </form>
             </div>
         </div>
     </footer>
+    
 
-
-    <div data-modal class="backdrop--is-hidden">
+    <div data-modal class="backdrop backdrop--is-hidden">
         <div class="modal">
             <button data-modal-close class="button-close modal__button-close">
                 <svg class="button-close-icon" width="18px" height="18px">
@@ -511,7 +636,7 @@
                 </div>
 
 
-                <!-- Можно избавиться от id ( стили при этом менят не нужно)
+                <!--  Можно избавиться от id ( стили при этом менят не нужно)
 
                 <label for="user-name" class="form-field">
                     <span class="form-label">Ім'я</span>
@@ -545,6 +670,7 @@
     </div>
     </div>
     <script src="./modal.js"></script>
+    <script src="./burger.js"></script>
 </body>
 
 </html>

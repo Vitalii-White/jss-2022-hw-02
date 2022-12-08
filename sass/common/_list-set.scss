@@ -1,0 +1,65 @@
+/** Общие наборы карточек   */
+
+.list-set {
+
+    @media screen and (max-width: 767px) {
+        display: block;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+
+    }
+}
+
+.list-set__item {
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1169px) {
+        margin: 15px;
+        flex-basis: calc((100% - 4 * 15px)/2);
+    }
+
+    @media screen and (min-width: 1170px) {
+        margin: 15px;
+        flex-basis: calc((100% - 8 * 15px)/4);
+    }
+
+    &--three-column {
+        @media screen and (min-width: 1170px) {
+            margin: 15px;
+            flex-basis: calc((100% - 6 * 15px)/3);
+        }
+    }
+}
+
+
+.clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+
+.clients-item {
+
+    @media screen and (max-width: 767px) {
+        margin: 15px;
+        flex-basis: calc((100% - 4 * 15px)/2);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1169px) {
+        margin: 15px;
+        flex-basis: calc((100% - 6 * 15px)/3);
+
+    }
+
+    @media screen and (min-width: 1170px) {
+        margin: 15px;
+        flex-basis: calc((100% - 12 * 15px)/6);
+    }
+}

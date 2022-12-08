@@ -1,3 +1,11 @@
+
+.specialization {
+    @media screen and (max-width: 1169px) {
+            display: none;
+        }
+}
+
+
 .specialization__title {
     color: $title-text-color;
 

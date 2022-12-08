@@ -2,13 +2,31 @@
 /**Кнопки для Партфолио   */
 .portfolio-nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) and (max-width: 1169px) {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px; 
+    }
+
+    @media screen and (min-width: 1170px) {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
 }
 
-.portfolio-nav__item:not(:last-child) {
+.portfolio-nav__item {
     margin-right: 8px;
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 15px;
+
+        &:last-child {
+                margin-bottom: 40px;
+            }  
+    }
 
     &:hover,
     &:focus {
