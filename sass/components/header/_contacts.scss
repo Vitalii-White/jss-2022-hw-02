@@ -4,6 +4,7 @@
 
     @media screen and (min-width: 768px) {
         flex-direction: column;
+        justify-content: center;
     }
 
     @media screen and (min-width: 1170px) {
@@ -31,7 +32,6 @@
 
         &:first-child {
                 margin-bottom: 10px ;
-                padding-top: 17px;
             }
         }
 
@@ -40,7 +40,7 @@
         &:first-child {
                 margin-right: 30px;
             }
-     }
+        }
 }
 
 

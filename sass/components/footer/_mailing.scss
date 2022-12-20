@@ -24,7 +24,7 @@
     margin-bottom: 20px;
     padding: 15px;
 
-    width: 100%; 
+    width: 100%;
     background-color: $secondary-bg-color;
     color: $accent-white-color;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -35,10 +35,15 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        @media screen and (min-width: 768px) {
-            margin: 0;
-            margin-right: 12px; 
+        @media screen and (min-width: 568px) {
             width: 450px;
+            margin-right: 12px; 
+        }
+
+        @media screen and (min-width: 1170px) {
+            margin-bottom: 0px;
+            width: 358px;
+            
         }
     }
 
@@ -60,7 +65,7 @@
             width: 24px;
             height: 24px;
     
-            background-image: url(../../../images/icon-send1.svg);
+            background-image: url(../../images/icon-send1.svg);
             background-size: contain;
     
             transition: transform 750ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -75,7 +80,7 @@
             width: 24px;
             height: 24px;
         
-            background-image: url(.././../../images/icon-send1.svg);
+            background-image: url(../../images/icon-send1.svg);
             background-size: contain;
         
             transform: translateY(calc(-50% + 70px)) translateX(-80px);
